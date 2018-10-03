@@ -620,7 +620,7 @@ OrderID	|CustomerName|	OrderDate
 * RIGHT (OUTER) JOIN : 오른쪽 테이블에서 모든 레코드를 반환하고 왼쪽 테이블에서 일치하는 레코드를 반환합니다.
 * FULL (OUTER) JOIN : 왼쪽 또는 오른쪽 테이블에 일치하는 항목이 있으면 모든 레코드를 반환합니다.
 
-![innerjoin](./img/img_innerjoin.gif)
-![leftjoin](./img/img_leftjoin.gif)
-![rightjoin](./img/img_rightjoin.gif)
-![fullouterjoin](./img/img_fulljoin.gif)
+![innerjoin](./img/ij.gif)
+![leftjoin](./img/lj.gif)
+![rightjoin](./img/rj.gif)
+![fullouterjoin](./img/foj.gif)
