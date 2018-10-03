@@ -651,8 +651,10 @@ FROM table1
 LEFT JOIN table2 ON table1.column_name = table2.column_name;
 ~~~
 
-**참고** : 일부 데이터베이스에서는 LEFT JOIN을 LEFT OUTER JOIN이라고합니다.
 ![leftjoin](../img/lj.gif)
+
+**참고** : 일부 데이터베이스에서는 LEFT JOIN을 LEFT OUTER JOIN이라고합니다.
+
 
 
 ## SQL RIGHT JOIN 키워드
@@ -664,8 +666,11 @@ SELECT column_name(s)
 FROM table1
 RIGHT JOIN table2 ON table1.column_name = table2.column_name;
 ~~~
-**참고** : 일부 데이터베이스에서는 RIGHT JOIN을 RIGHT OUTER JOIN이라고합니다.
+
 ![rightjoin](../img/rj.gif)
+
+**참고** : 일부 데이터베이스에서는 RIGHT JOIN을 RIGHT OUTER JOIN이라고합니다.
+
 
 
 ## SQL FULL OUTER JOIN 키워드
