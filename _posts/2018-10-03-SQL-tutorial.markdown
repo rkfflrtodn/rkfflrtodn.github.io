@@ -47,3 +47,44 @@ CustomerID | CustomerName | ContactName | Address | City | PostalCode | Country
 1 | Alfreds Futterkiste | Maria Anders | Obere Str. 57 | Berlin | 12209 | Germany
 2 | Ana Trujillo Emparedados y helados | Ana Trujillo	 | Avda. de la Constitución 2222 | México D.F. | 05021 | Mexico
 3 | Antonio Moreno Taquería | Antonio Moreno | Mataderos 2312 | México D.F. | 05023 | Mexico
+
+
+Customers이라는 Table에서 모든 자료들을 뽑아내는 데 사용하는 쿼리문은
+SELECT * FROM Customers 라는 쿼리문이다
+이 쿼리문을 간단히 설명하면
+'SELECT'는 뽑아낸다 라는 뜻이고
+'\*'은 모든 내용을 뜻한다.
+'FROM'은 FROM 뒤에 테이블 명을 입력함으로써 어느 테이블에서 앞의 쿼리문을 실행할것인지 명시한다.
+
+위의 내용은 즉 Customers 라는 테이블에서 모든 자료를 뽑아낸다는 의미이다.
+
+
+모든 테이블은 필드라는 더 작은 엔티티로 나뉩니다. Customers 테이블의 필드는 CustomerID, CustomerName, ContactName, Address, City, PostalCode 및 Country로 구성됩니다. 필드는 테이블의 모든 레코드에 대한 특정 정보를 유지 관리하도록 설계된 테이블의 열입니다.
+
+레코드라고도하는 레코드는 테이블에있는 개별 항목입니다. 예를 들어, 위의 Customers 테이블에는 91 개의 레코드가 있습니다. 레코드는 테이블의 가로 엔티티입니다.
+
+컬럼은 테이블의 특정 필드와 연관된 모든 정보를 포함하는 테이블의 수직 엔티티입니다.
+
+**참고로 SQL 키워드는 대소 문자를 구분하지 않습니다. select는 SELECT와 같습니다.**
+
+
+# SQL 문 다음에 오는 세미콜론?
+일부 데이터베이스 시스템에서는 각 SQL 문의 끝에 세미콜론이 필요합니다.
+
+세미콜론은 데이터베이스 시스템에서 각 SQL 문을 분리하여 서버에 대한 동일한 호출에서 둘 이상의 SQL 문을 실행할 수 있도록하는 표준 방법입니다.
+
+이 튜토리얼에서는 각 SQL 문의 끝에 세미콜론을 사용합니다.
+
+# 가장 자주 사용되는 SQL명령들..
+
+* **SELECT** - 데이터베이스에서 데이터를 추출합니다.
+* **UPDATE** - 데이터베이스의 데이터를 업데이트합니다.
+* **DELETE** - 데이터베이스에서 데이터를 삭제합니다.
+* **INSERT INTO** - 새로운 데이터를 데이터베이스에 삽입합니다.
+* **CREATE DATABASE** - 새 데이터베이스를 만듭니다.
+* **ALTER DATABASE** - 데이터베이스를 수정합니다.
+* **CREATE TABLE** - 새 테이블을 만듭니다.
+* **ALTER TABLE** - 테이블을 수정합니다.
+* **DROP TABLE** - 테이블을 삭제합니다.
+* **CREATE INDEX** - 색인 (검색 키)을 작성합니다.
+* **DROP INDEX** - 색인을 삭제합니다.
