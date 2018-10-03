@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "first-post"
+title:  "second-post"
 date:   2018-10-04 16:01:57 +0900
-categories: jekyll update
+categories: my update
 ---
 second-post
