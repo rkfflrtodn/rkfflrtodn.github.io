@@ -98,20 +98,20 @@ SELECT * FROM Customers 라는 쿼리문이다.
 # SQL SELECT 문
 
 ## SQL SELECT 문
-
+~~~SQL
 SELECT 문은 데이터베이스에서 데이터를 선택하는 데 사용됩니다.
 
 리턴 된 데이터는 결과 세트라고하는 결과 테이블에 저장됩니다.
-
+~~~
 ## SELECT 구문
-
-**SELECT** column1, column2, ...  
-**FROM** table_name;
-
+~~~SQL
+SELECT column1, column2, ...  
+FROM table_name;
+~~~
 ## 예
-
-**SELECT** CustomerName, City **FROM** Customers;
-
+~~~SQL
+SELECT CustomerName, City FROM Customers;
+~~~
 
 # SQL SELECT DISTINCT 문
 
@@ -124,14 +124,14 @@ SELECT DISTINCT.은 고유 한 (다른) 값만 리턴하는 데 사용됩니다.
 SELECT DISTINCT.은 고유 한 (다른) 값만 리턴하는 데 사용됩니다.
 
 ## SELECT DISTINCT 구문
-
-**SELECT DISTINCT** column1, column2, ...  
-**FROM** table_name;
-
+~~~SQL
+SELECT DISTINCT column1, column2, ...  
+FROM table_name;
+~~~
 ## 예
-
-**SELECT DISTINCT** Country **FROM** Customers;
-
+~~~SQL
+SELECT DISTINCT Country FROM Customers;
+~~~
 
 # SQL WHERE 절
 
@@ -142,16 +142,16 @@ WHERE 절은 레코드를 필터링하는 데 사용됩니다.
 WHERE 절은 지정된 조건을 충족하는 레코드 만 추출하는 데 사용됩니다.
 
 ## WHERE 구문
-
-**SELECT** column1, column2, ...  
-**FROM** table_name  
-**WHERE** condition;
-
+~~~SQL
+SELECT column1, column2, ...  
+FROM table_name  
+WHERE condition;
+~~~
 ## 예
-
-**SELECT** \* **FROM** Customers  
-**WHERE** Country='Mexico';
-
+~~~SQL
+SELECT * FROM Customers  
+WHERE Country='Mexico';
+~~~
 ## 텍스트 필드와 숫자 필드 비교
 
 SQL은 텍스트 값에 대해 작은 따옴표를 사용해야합니다 (대부분의 데이터베이스 시스템은 큰 따옴표도 허용합니다).
@@ -159,6 +159,7 @@ SQL은 텍스트 값에 대해 작은 따옴표를 사용해야합니다 (대부
 그러나 숫자 필드는 따옴표로 묶지 않아야합니다.
 
 ## 예
-
-**SELECT** \* FROM Customers  
-**WHERE** CustomerID=1;
+~~~SQL
+SELECT * FROM Customers  
+WHERE CustomerID=1;
+~~~
