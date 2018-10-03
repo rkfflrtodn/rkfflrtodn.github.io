@@ -624,3 +624,173 @@ OrderID	|CustomerName|	OrderDate
 ![leftjoin](../img/lj.gif)
 ![rightjoin](../img/rj.gif)
 ![fullouterjoin](../img/foj.gif)
+
+
+
+## SQL INNER JOIN 키워드
+
+INNER JOIN 키워드는 두 표에서 모두 일치하는 값을 가진 레코드를 선택합니다.
+
+# INNER JOIN 구문
+~~~SQL
+SELECT column_name(s)
+FROM table1
+INNER JOIN table2 ON table1.column_name = table2.column_name;
+~~~
+![innerjoin](../img/ij.gif)
+
+
+## SQL LEFT JOIN 키워드
+
+LEFT JOIN 키워드는 왼쪽 테이블 (table1)의 모든 레코드와 오른쪽 테이블 (table2)의 일치 레코드를 반환합니다. 일치하는 것이 없으면 오른쪽에서 결과가 NULL입니다.
+
+# LEFT JOIN 구문
+~~~SQL
+SELECT column_name(s)
+FROM table1
+LEFT JOIN table2 ON table1.column_name = table2.column_name;
+~~~
+
+**참고** : 일부 데이터베이스에서는 LEFT JOIN을 LEFT OUTER JOIN이라고합니다.
+![leftjoin](../img/lj.gif)
+
+
+## SQL RIGHT JOIN 키워드
+RIGHT JOIN 키워드는 오른쪽 테이블 (table2)의 모든 레코드와 왼쪽 테이블 (table1)의 일치 레코드를 반환합니다. 일치가없는 경우 결과는 왼쪽에서 NULL입니다.
+
+# RIGHT JOIN 구문
+~~~SQL
+SELECT column_name(s)
+FROM table1
+RIGHT JOIN table2 ON table1.column_name = table2.column_name;
+~~~
+**참고** : 일부 데이터베이스에서는 RIGHT JOIN을 RIGHT OUTER JOIN이라고합니다.
+![rightjoin](../img/rj.gif)
+
+
+## SQL FULL OUTER JOIN 키워드
+FULL OUTER JOIN 키워드는 왼쪽 (table1) 또는 오른쪽 (table2) 테이블 레코드가 일치 할 때 모든 레코드를 리턴합니다.
+
+**참고** : FULL OUTER JOIN은 잠재적으로 매우 큰 결과 집합을 반환 할 수 있습니다!
+
+# FULL OUTER JOIN 구문
+~~~SQL
+SELECT column_name(s)
+FROM table1
+FULL OUTER JOIN table2 ON table1.column_name = table2.column_name;
+~~~
+![fullouterjoin](../img/foj.gif)
+
+## SQL SELF JOIN
+self JOIN은 정규 조인이지만 테이블 자체는 조인됩니다.
+
+# SELF JOIN 구문
+~~~SQL
+SELECT column_name(s)
+FROM table1 T1, table1 T2
+WHERE condition;
+~~~
+
+
+## SQL UNION 연산자
+UNION 연산자는 두 개 이상의 SELECT 문의 결과 집합을 결합하는 데 사용됩니다.
+
+* UNION 내의 각 SELECT 문은 같은 수의 열을 가져야합니다.
+* 열은 유사한 데이터 형식을 가져야합니다.
+* 각 SELECT 문의 열은 같은 순서로 있어야합니다
+
+# UNION 구문
+~~~SQL
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+~~~
+
+# UNION ALL 구문
+UNION 연산자는 기본적으로 고유 값만 선택합니다. 중복 값을 허용하려면 UNION ALL을 사용하십시오.
+~~~SQL
+SELECT column_name(s) FROM table1
+UNION ALL
+SELECT column_name(s) FROM table2;
+~~~
+**참고** : 결과 집합의 열 이름은 일반적으로 UNION의 첫 번째 SELECT 문의 열 이름과 동일합니다.
+
+# WHERE가있는 SQL UNION
+다음 SQL.은 "Customers"W "Suppliers"에서 모든 다른 독일 도시 (유일한 값만)를 선택합니다.
+
+# 예
+~~~SQL
+SELECT City, Country FROM Customers
+WHERE Country='Germany'
+UNION
+SELECT City, Country FROM Suppliers
+WHERE Country='Germany'
+ORDER BY City;
+~~~
+
+# SQL UNION ALL with WHERE
+
+다음 SQL.은 "Customers"W "Suppliers"에서 모든 독일 도시 (중복 값도)를 선택합니다.
+
+# 예
+~~~SQL
+SELECT City, Country FROM Customers
+WHERE Country='Germany'
+UNION ALL
+SELECT City, Country FROM Suppliers
+WHERE Country='Germany'
+ORDER BY City;
+~~~
+
+## SQL GROUP BY 문
+
+GROUP BY 문은 집계 함수 (COUNT, MAX, MIN, SUM, AVG)와 함께 사용되어 결과 집합을 하나 이상의 열로 그룹화합니다.
+
+# GROUP BY 구문
+~~~SQL
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+ORDER BY column_name(s);
+~~~
+
+# JOIN 예제를 사용한 GROUP BY
+
+다음 SQL 문은 각 발송인이 보낸 주문 수를 나열합니다.
+
+# 예
+~~~SQL
+SELECT Shippers.ShipperName, COUNT(Orders.OrderID) AS NumberOfOrders FROM Orders
+LEFT JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID
+GROUP BY ShipperName;
+~~~
+
+## SQL HAVING 절
+
+WHERE 키워드를 집계 함수와 함 2 사용할 수 없으므로 HAVING 절이 SQL에 추가되었습니다.
+
+# HAVING 구문
+~~~SQL
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+HAVING condition
+ORDER BY column_name(s);
+~~~
+
+
+## SQL EXISTS 연산자
+
+EXISTS 연산자는 하위 쿼리에 레코드가 있는지 테스트하는 데 사용됩니다.
+
+EXISTS 연산자는 하위 쿼리가 하나 이상의 레코드를 반환하면 true를 반환합니다.
+
+# EXISTS 구문
+~~~SQL
+SELECT column_name(s)
+FROM table_name
+WHERE EXISTS
+(SELECT column_name FROM table_name WHERE condition);
+~~~
