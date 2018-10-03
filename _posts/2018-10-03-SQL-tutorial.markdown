@@ -50,10 +50,15 @@ CustomerID | CustomerName | ContactName | Address | City | PostalCode | Country
 
 
 Customers이라는 Table에서 모든 자료들을 뽑아내는 데 사용하는 쿼리문은
-SELECT * FROM Customers 라는 쿼리문이다
+
+SELECT * FROM Customers 라는 쿼리문이다.
+
 이 쿼리문을 간단히 설명하면
+
 'SELECT'는 뽑아낸다 라는 뜻이고
+
 '\*'은 모든 내용을 뜻한다.
+
 'FROM'은 FROM 뒤에 테이블 명을 입력함으로써 어느 테이블에서 앞의 쿼리문을 실행할것인지 명시한다.
 
 위의 내용은 즉 Customers 라는 테이블에서 모든 자료를 뽑아낸다는 의미이다.
@@ -88,3 +93,72 @@ SELECT * FROM Customers 라는 쿼리문이다
 * **DROP TABLE** - 테이블을 삭제합니다.
 * **CREATE INDEX** - 색인 (검색 키)을 작성합니다.
 * **DROP INDEX** - 색인을 삭제합니다.
+
+
+# SQL SELECT 문
+
+## SQL SELECT 문
+
+SELECT 문은 데이터베이스에서 데이터를 선택하는 데 사용됩니다.
+
+리턴 된 데이터는 결과 세트라고하는 결과 테이블에 저장됩니다.
+
+## SELECT 구문
+
+**SELECT** column1, column2, ...  
+**FROM** table_name;
+
+## 예
+
+**SELECT** CustomerName, City **FROM** Customers;
+
+
+# SQL SELECT DISTINCT 문
+
+## SQL SELECT DISTINCT 문
+
+SELECT DISTINCT.은 고유 한 (다른) 값만 리턴하는 데 사용됩니다.
+
+테이블 내에서 열은 종종 많은 중복 값을 포함합니다. 때로는 서로 다른 (뚜렷한) 값만 나열하려고합니다.
+
+SELECT DISTINCT.은 고유 한 (다른) 값만 리턴하는 데 사용됩니다.
+
+## SELECT DISTINCT 구문
+
+**SELECT DISTINCT** column1, column2, ...  
+**FROM** table_name;
+
+## 예
+
+**SELECT DISTINCT** Country **FROM** Customers;
+
+
+# SQL WHERE 절
+
+## SQL WHERE 절
+
+WHERE 절은 레코드를 필터링하는 데 사용됩니다.
+
+WHERE 절은 지정된 조건을 충족하는 레코드 만 추출하는 데 사용됩니다.
+
+## WHERE 구문
+
+**SELECT** column1, column2, ...  
+**FROM** table_name  
+**WHERE** condition;
+
+## 예
+
+**SELECT** \* **FROM** Customers  
+**WHERE** Country='Mexico';
+
+## 텍스트 필드와 숫자 필드 비교
+
+SQL은 텍스트 값에 대해 작은 따옴표를 사용해야합니다 (대부분의 데이터베이스 시스템은 큰 따옴표도 허용합니다).
+
+그러나 숫자 필드는 따옴표로 묶지 않아야합니다.
+
+## 예
+
+**SELECT** \* FROM Customers  
+**WHERE** CustomerID=1;
