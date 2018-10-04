@@ -620,10 +620,10 @@ OrderID	|CustomerName|	OrderDate
 * RIGHT (OUTER) JOIN : 오른쪽 테이블에서 모든 레코드를 반환하고 왼쪽 테이블에서 일치하는 레코드를 반환합니다.
 * FULL (OUTER) JOIN : 왼쪽 또는 오른쪽 테이블에 일치하는 항목이 있으면 모든 레코드를 반환합니다.
 
-![innerjoin](../img/ij.gif)
-![leftjoin](../img/lj.gif)
-![rightjoin](../img/rj.gif)
-![fullouterjoin](../img/foj.gif)
+![ij](https://user-images.githubusercontent.com/43129222/46449721-927f4100-c7c8-11e8-859c-3f0fafe5f47b.gif)
+![lj](https://user-images.githubusercontent.com/43129222/46449757-b9d60e00-c7c8-11e8-8add-c1bea785cfbc.gif)
+![rj](https://user-images.githubusercontent.com/43129222/46449767-c490a300-c7c8-11e8-817c-b2ac9212105e.gif)
+![foj](https://user-images.githubusercontent.com/43129222/46449775-cce8de00-c7c8-11e8-96f1-21d785c754ae.gif)
 
 
 
@@ -637,7 +637,7 @@ SELECT column_name(s)
 FROM table1
 INNER JOIN table2 ON table1.column_name = table2.column_name;
 ~~~
-![innerjoin](../img/ij.gif)
+![ij](https://user-images.githubusercontent.com/43129222/46449721-927f4100-c7c8-11e8-859c-3f0fafe5f47b.gif)
 
 
 ## SQL LEFT JOIN 키워드
@@ -651,7 +651,7 @@ FROM table1
 LEFT JOIN table2 ON table1.column_name = table2.column_name;
 ~~~
 
-![leftjoin](../img/lj.gif)
+![lj](https://user-images.githubusercontent.com/43129222/46449757-b9d60e00-c7c8-11e8-8add-c1bea785cfbc.gif)
 
 **참고** : 일부 데이터베이스에서는 LEFT JOIN을 LEFT OUTER JOIN이라고합니다.
 
@@ -667,7 +667,7 @@ FROM table1
 RIGHT JOIN table2 ON table1.column_name = table2.column_name;
 ~~~
 
-![rightjoin](../img/rj.gif)
+![rj](https://user-images.githubusercontent.com/43129222/46449767-c490a300-c7c8-11e8-817c-b2ac9212105e.gif)
 
 **참고** : 일부 데이터베이스에서는 RIGHT JOIN을 RIGHT OUTER JOIN이라고합니다.
 
@@ -684,7 +684,7 @@ SELECT column_name(s)
 FROM table1
 FULL OUTER JOIN table2 ON table1.column_name = table2.column_name;
 ~~~
-![fullouterjoin](../img/foj.gif)
+![foj](https://user-images.githubusercontent.com/43129222/46449775-cce8de00-c7c8-11e8-96f1-21d785c754ae.gif)
 
 ## SQL SELF JOIN
 self JOIN은 정규 조인이지만 테이블 자체는 조인됩니다.
